@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+         <title>Navbar Example</title>
+         <style>
+                 body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #0a0a0a;
+  color: #ec0d0d;
+  padding: 10px;
+}
+
+.left-half {
+  display: flex;
+  align-items: center;
+}
+
+.right-half {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+         </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="left-half">
+      <a href="#" class="logo">Movies</a>
+    </div>
+    <div class="right-half">
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+      <!-- Add more items as needed -->
+    </div>
+  </div>
+         <script>
+                  function toggleNavbar() {
+                           var navbar = document.getElementById("myNavbar");
+                           if (navbar.className === "navbar") {
+                                    navbar.className += " responsive";
+                           } else {
+                                    navbar.className = "navbar";
+                           }
+                  }
+         </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+         <title>Movie Search</title>
+         <style>
+                  /* Basic styling for the login page */
+                  body {
+                           margin: 0;
+                           padding: 0;
+                           font-family: Arial, sans-serif;
+                           background-color: #f2f2f2;
+                           width: 100%;
+                  }
+         
+                  .container {
+                           max-width: 800px;
+                           margin: 100px auto;
+                           padding: 20px;
+                           border: 1px solid #ccc;
+                           border-radius: 5px;
+                           background-color: #fff;
+                           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  }
+         
+                  h2 {
+                           text-align: center;
+                           margin-bottom: 20px;
+                  }
+         
+                  input {
+                           width: 100%;
+                           padding: 10px;
+                           margin-bottom: 15px;
+                           border: 1px solid #ccc;
+                           border-radius: 5px;
+                  }
+         
+                  button {
+                           align-items: center;
+                           width: 50%;
+                           padding: 10px;
+                           background-color: #333;
+                           color: #fff;
+                           border: none;
+                           border-radius: 5px;
+                           cursor: pointer;
+                  }
+         
+                  button:hover {
+                           background-color: #555;
+                  }
+         </style>
+ </head>
+
+<body>
+         <div>
+         <div class="container">
+                  <h1>Movie Search</h1>
+                     {{!-- <p>Welcome, {{ user.username }}!</p> --}}
+
+                  <form id="searchForm" action="/search-movies" method="get">
+                           <label for="search">Search Movies:</label>
+                           <input type="text" id="search" name="search" required>
+                           <button type="submit">Search</button>
+                  </form>
+         <div id="searchResults">
+                  {{#if error}}
+                  <p>{{error}}</p>
+                  {{else}}
+                  {{#each movies}}
+                  <div class="movie">
+                           <h2>{{Title}}</h2>
+                           <p>Year: {{Year}}</p>
+                           <p>Released: {{ Released}}</p>
+                           <p>Runtime: {{Runtime}}</p>
+                           <img src="{{Poster}}" alt="{{Title}} Poster">
+                  </div>
+                  {{/each}}
+                  {{/if}}
+         </div>
+         </div>
+
+        </div>
+         <script src="main.js"></script>
+</body>
+
+</html>
